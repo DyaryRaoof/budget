@@ -3,7 +3,11 @@
 <h1>Spendings</h1>
 
 <div id="spendings">
+  <p> 
+    <%=@spendings.reduce(0) { |sum, spending| sum + spending.amount }%>
+  </p>
   <% @spendings.each do |spending| %>
+  
     <%= render spending %>
     <p>
       <%= link_to "Show this spending", group_spending_path(params[:group_id], id: spending.id) %>
@@ -12,3 +16,5 @@
 </div>
 
 <%= link_to "New spending", new_group_spending_path(params[:group_id]) %>
+<%= link_to "Back", root_path %>
+

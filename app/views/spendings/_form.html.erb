@@ -1,4 +1,4 @@
-<%= form_with(model: spending) do |form| %>
+<%= form_with(model: spending, url:group_spendings_url(params[:group_id]))  do |form| %>
   <% if spending.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(spending.errors.count, "error") %> prohibited this spending from being saved:</h2>

@@ -3,7 +3,7 @@ class SpendingsController < ApplicationController
 
   # GET /spendings or /spendings.json
   def index
-    @spendings = Spending.joins(:group_spendings).where(group_spendings: { group_id: params[:group_id] })
+    @spendings = Spending.joins(:group_spendings).where(group_spendings: { group_id: params[:group_id] }).order(created_at: :desc)
   end
 
   # GET /spendings/1 or /spendings/1.json
@@ -25,7 +25,7 @@ class SpendingsController < ApplicationController
 
     respond_to do |format|
       if @spending.save
-        format.html { redirect_to spending_url(@spending), notice: "Spending was successfully created." }
+        format.html { redirect_to group_spending_url(id: @spending.id), notice: "Spending was successfully created." }
         format.json { render :show, status: :created, location: @spending }
       else
         format.html { render :new, status: :unprocessable_entity }
