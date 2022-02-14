@@ -3,7 +3,7 @@ class SpendingsController < ApplicationController
 
   # GET /spendings or /spendings.json
   def index
-    @spendings = Spending.all
+    @spendings = Spending.joins(:group_spendings).where(group_spendings: { group_id: params[:group_id] })
   end
 
   # GET /spendings/1 or /spendings/1.json

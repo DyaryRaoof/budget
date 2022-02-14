@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :groups
-  resources :spendings
+  resources :groups do
+    resources :spendings
+  end
   devise_for :users
-  root to: 'home#index'
+  root to: 'groups#index'
   resources :users, only: [:index, :show] do
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
