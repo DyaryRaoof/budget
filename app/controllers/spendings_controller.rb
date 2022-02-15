@@ -22,9 +22,12 @@ class SpendingsController < ApplicationController
   # POST /spendings or /spendings.json
   def create
     @spending = Spending.new(spending_params)
-
     respond_to do |format|
       if @spending.save
+        params[:spending][:group_ids].each do |group_id|
+          GroupSpending.create(group_id: group_id, spending_id: @spending.id)
+        end
+
         format.html { redirect_to group_spending_url(id: @spending.id), notice: "Spending was successfully created." }
         format.json { render :show, status: :created, location: @spending }
       else
@@ -65,6 +68,6 @@ class SpendingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spending_params
-      params.require(:spending).permit(:author_id, :name, :amount)
+      params.require(:spending).permit(:author_id, :name, :amount, :group_ids)
     end
 end

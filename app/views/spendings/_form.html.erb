@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <% Group.where(author_id: current_user.id).each_with_index do |g , i| %>
+        <%= form.check_box :group_ids, {multiple: true}, i, nil %><%= g.name%>
+  <% end %>
+
   <div>
     <%= form.label :author_id, style: "display: block" %>
     <%= form.text_field :author_id %>
