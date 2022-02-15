@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+    font-family: "proxima-nova-bold";
+    src: url("../fonts/Proxima-Nova-Bold.otf")
+  }
+
+  body{
+    font-family: 'proxima-nova-bold' !important;
+  }
+
+  .login-page-nav {
+    height: 90px;
+  }
+
+ .splash-title{
+    margin-top: 40vh;
+ }
+
+ .registration-buttons {
+    margin-top: 35vh;
+ }
+
+ .main-blue-background{
+    background-color: #3978C2 !important;
+ }

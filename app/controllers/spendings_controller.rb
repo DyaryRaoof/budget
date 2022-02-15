@@ -1,4 +1,5 @@
 class SpendingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_spending, only: %i[ show edit update destroy ]
 
   # GET /spendings or /spendings.json
