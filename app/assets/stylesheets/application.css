@@ -37,3 +37,25 @@
  .main-blue-background{
     background-color: #3978C2 !important;
  }
+
+ .nav-search-icon{
+    font-size: 50px !important;
+ }
+
+ .gray-bg{
+    background-color: #F0F3F2;
+ }
+
+ .shadow {
+    box-shadow: 0px 0px 10px #000000;
+ }
+
+ .new-group-button{
+     position: absolute;
+     bottom: 0px ;
+ }
+
+ .groups-wrapper { 
+     height: 82vh !important;
+     overflow-y: scroll !important;
+ }

@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
+<%= render 'nav'%>
 <div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
+  <div class="groups-wrapper">
+    <% @groups.each do |group| %>
+      <%= link_to group do  %>
+        <%= render group %>
+      <% end %>
+    <% end %>
+    <%= link_to "New group", new_group_path , class:"new-group-button bg-success text-white text-decoration-none form-control p-4 text-center" %>
+  </div>
 </div>
 
-<%= link_to "New group", new_group_path %>
+
