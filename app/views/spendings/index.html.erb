@@ -1,20 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Spendings</h1>
+<%= render 'shared/nav', name: "TRANSACTIONS"%>
 
 <div id="spendings">
-  <p> 
-    <%=@spendings.reduce(0) { |sum, spending| sum + spending.amount }%>
-  </p>
+  <div class="groups-wrapper">
+
+  <div class="d-flex justify-content-between align-items-center bg-light p-2 m-3"> 
+    <%= image_tag @group.icon, :size => '100x100' %>
+    <span><%= @group.name%></span>
+    <div class="fw-bold">
+      $<%=@spendings.reduce(0) { |sum, spending| sum + spending.amount }%>
+    </div>
+  </div>
+
   <% @spendings.each do |spending| %>
-  
     <%= render spending %>
-    <p>
-      <%= link_to "Show this spending", group_spending_path(params[:group_id], id: spending.id) %>
-    </p>
   <% end %>
+  </div>
+    <%= link_to "New Transaction", new_group_spending_path(params[:group_id]) , class:"new-group-button bg-success text-white text-decoration-none form-control p-4 text-center" %>
+
 </div>
 
-<%= link_to "New spending", new_group_spending_path(params[:group_id]) %>
 <%= link_to "Back", root_path %>
 

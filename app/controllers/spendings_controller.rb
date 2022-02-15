@@ -5,6 +5,7 @@ class SpendingsController < ApplicationController
   # GET /spendings or /spendings.json
   def index
     @spendings = Spending.joins(:group_spendings).where(group_spendings: { group_id: params[:group_id] }).order(created_at: :desc)
+    @group = Group.find(params[:group_id])
   end
 
   # GET /spendings/1 or /spendings/1.json
