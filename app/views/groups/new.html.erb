@@ -1,9 +1,2 @@
-<h1>New group</h1>
-
+<%= render 'shared/nav_with_back_button', name: "CREATE GROUP", path: groups_path  %>
 <%= render "form", group: @group %>
-
-<br>
-
-<div>
-  <%= link_to "Back to groups", root_path %>
-</div>

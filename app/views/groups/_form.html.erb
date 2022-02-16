@@ -1,3 +1,4 @@
+
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
     <div style="color: red">
@@ -12,21 +13,18 @@
   <% end %>
 
   <div>
-    <%= form.hidden_field :author_id, value: current_user.id %>
-    <%= form.text_field :author_id, value: current_user.id %>
+    <%= form.hidden_field :author_id, value: current_user.id%>
   </div>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control p-3", placeholder: "Name"  %>
   </div>
 
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+    <%= form.text_field :icon, class: "form-control p-3", placeholder: "Icon"  %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Save', class: "new-group-button bg-success text-white text-decoration-none form-control p-4 text-center" %>
   </div>
 <% end %>
