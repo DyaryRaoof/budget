@@ -1,24 +1,55 @@
+# Budget
 
-# README
+This is a  Ruby on Rails capstone project from Microverse curriculum. It is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I created a Ruby on Rails application that allows the user to:
+- register and log in, so that the data is private to them.
+- introduce new transactions associated with a category.
+- see the money spent on each category.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby on Rails
+- PostgreSQL
+- Rspec
+- bullet gem
+- cancancan gem
+- Devise gem
 
-* System dependencies
+## Live Demo
+https://recipes-must-dyary-production.herokuapp.com/
 
-* Configuration
+## Getting Started
 
-* Database creation
+Download the ZIP from this [Link](https://github.com/DyaryRaoof/budget.git), or run the following git command to clone the files to your machine:
 
-* Database initialization
+- git clone https://github.com/DyaryRaoof/budget.git
+- Open the cloned folder on the IDE of your choice
+- Install the required dependecies with `bundle install`
+- run `db:migrate`
+- rub `db:seed`
+- Use `rails s `to run the program
+- Use `rspec` to run the tests
 
-* How to run the test suite
+## Author
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **Dyary Raoof**
+- GitHub: [@DyaryRaoof](https://github.com/DyaryRaoof)
+- Twitter: [@DyaryRaoof](https://twitter.com/DyaryRaoof)
+- LinkedIn: [@DyaryRaoof](https://linkedin.com/in/DyaryRaoof)
 
-* Deployment instructions
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/DyaryRaoof/budget/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
+<!-- The email for this project is dyary2018@gmail.com -->
