@@ -23,8 +23,8 @@ class SpendingsController < ApplicationController
 
   # POST /spendings or /spendings.json
   def create
-    @spending = Spending.new(spending_params)
-    
+    @spending = Spending.new( author_id: spending_params[:author_id], name: spending_params[:name] , amount: spending_params[:amount])
+
     if !params[:spending][:group_ids]
       flash[:notice]  =  'You should select at least one category'
       redirect_to request.referrer
@@ -33,13 +33,13 @@ class SpendingsController < ApplicationController
 
     respond_to do |format|
       if @spending.save
-        
 
         params[:spending][:group_ids].each do |group_id|
-          GroupSpending.create(group_id: group_id, spending_id: @spending.id)
+          puts group_id
+          GroupSpending.create!(group_id: group_id.to_i, spending_id: @spending.id)
         end
-
-        format.html { redirect_to group_spending_url(id: @spending.id), notice: "Spending was successfully created." }
+        
+        format.html { redirect_to   group_spendings_url, notice: "Spending was successfully created." }
         format.json { render :show, status: :created, location: @spending }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -79,6 +79,6 @@ class SpendingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spending_params
-      params.require(:spending).permit(:author_id, :name, :amount, :group_ids)
+      params.require(:spending).permit(:author_id, :name, :amount,  :group_ids => [])
     end
 end

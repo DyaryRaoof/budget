@@ -14,7 +14,7 @@
  <div class="d-flex flex-wrap justify-content-center align-items-center p-2">
     <% Group.where(author_id: current_user.id).each_with_index do |g , i| %>
            <span class="px-1">
-              <%= form.check_box :group_ids, {multiple: true}, i, nil %><%= g.name%>
+              <%= form.check_box :group_ids, {multiple: true}, g.id, nil %><%= g.name%>
            </span>
     <% end %>
  </div>
