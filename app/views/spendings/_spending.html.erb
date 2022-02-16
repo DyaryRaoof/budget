@@ -1,11 +1,9 @@
 <div id="<%= dom_id spending %>">
 
-<%= link_to group_spending_path(params[:group_id], id: spending.id), class:"text-decoration-none text-dark shadow" do %>
  <div class="d-flex justify-content-between align-items-center bg-light m-3 py-5 px-2">
        <%= spending.name %>
       <span class="fw-bold">
         $ <%= spending.amount %>
       </span>
  </div>
- <% end %>
 </div>
