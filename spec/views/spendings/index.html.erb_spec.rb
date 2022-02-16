@@ -1,25 +1,32 @@
 require 'rails_helper'
 
-RSpec.describe 'spendings/index', type: :view do
-  before(:each) do
-    assign(:spendings, [
-             Spending.create!(
-               author: nil,
-               name: 'Name',
-               amount: 2.5
-             ),
-             Spending.create!(
-               author: nil,
-               name: 'Name',
-               amount: 2.5
-             )
-           ])
-  end
+RSpec.describe 'Spendings index Page', type: :system do
 
-  it 'renders a list of spendings' do
-    render
-    assert_select 'tr>td', text: nil.to_s, count: 2
-    assert_select 'tr>td', text: 'Name'.to_s, count: 2
-    assert_select 'tr>td', text: 2.5.to_s, count: 2
+  describe 'show' do
+    before(:each) do
+      visit new_user_session_path
+      fill_in 'Email', with: 'dyary2020@gmail.com'
+      fill_in 'Password', with: '123456'
+      find('input[name="commit"]').click
+      visit group_spendings_path(Group.first.id)
+    end
+
+    it "Can see Food" do
+      expect(page).to have_content 'Food'
+    end
+
+    it "Can see $ 11" do
+      expect(page).to have_content '$ 11.0'
+    end
+
+
+    it "Can see Group 1" do
+      expect(page).to have_content '$ 11.0'
+    end
+
+
+    it "Can see $ 55" do
+      expect(page).to have_content '$ 11.0'
+    end
   end
 end

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Post Index Page', type: :system do
+RSpec.describe 'Group Index Page', type: :system do
 
-  describe 'Users Post Index Page' do
+  describe 'index' do
     before(:each) do
       visit new_user_session_path
       fill_in 'Email', with: 'dyary2020@gmail.com'
