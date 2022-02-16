@@ -13,49 +13,49 @@
  *= require_tree .
  *= require_self
  */
- @font-face {
-    font-family: "proxima-nova-bold";
-    src: url("Proxima-Nova-Bold.otf")
-  }
+@font-face {
+  font-family: "proxima-nova-bold";
+  src: url("Proxima-Nova-Bold.otf");
+}
 
-  body{
-    font-family: 'proxima-nova-bold' !important;
-  }
+body {
+  font-family: 'proxima-nova-bold', sans-serif !important;
+}
 
-  .login-page-nav {
-    height: 90px;
-  }
+.login-page-nav {
+  height: 90px;
+}
 
- .splash-title{
-    margin-top: 40vh;
- }
+.splash-title {
+  margin-top: 40vh;
+}
 
- .registration-buttons {
-    margin-top: 35vh;
- }
+.registration-buttons {
+  margin-top: 35vh;
+}
 
- .main-blue-background{
-    background-color: #3978C2 !important;
- }
+.main-blue-background {
+  background-color: #3978c2 !important;
+}
 
- .nav-search-icon{
-    font-size: 40px !important;
- }
+.nav-search-icon {
+  font-size: 40px !important;
+}
 
- .gray-bg{
-    background-color: #F0F3F2;
- }
+.gray-bg {
+  background-color: #f0f3f2;
+}
 
- .shadow {
-    box-shadow: 0px 0px 10px #000000;
- }
+.shadow {
+  box-shadow: 0 0 10px #000;
+}
 
- .new-group-button{
-     position: absolute;
-     bottom: 0px ;
- }
+.new-group-button {
+  position: absolute;
+  bottom: 0;
+}
 
- .groups-wrapper { 
-     height: 80vh !important;
-     overflow-y: scroll !important;
- }
+.groups-wrapper {
+  height: 80vh !important;
+  overflow-y: scroll !important;
+}
