@@ -9,12 +9,12 @@ RSpec.describe Spending, type: :model do
   end
 
   it 'object should be invalid' do
-    subject.name =  nil
+    subject.name = nil
     expect(subject).to_not be_valid
   end
 
   it 'object should be invalid' do
-    subject.amount =  nil
+    subject.amount = nil
     expect(subject).to_not be_valid
   end
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/groups', type: :request do
-
   before(:each) do
     sign_in User.first
   end

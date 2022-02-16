@@ -1,5 +1,3 @@
-
-   
 require 'rails_helper'
 
 RSpec.describe 'Login page', type: :system do
@@ -22,7 +20,7 @@ RSpec.describe 'Login page', type: :system do
 
     it 'When I click the submit button without filling in the username and the password,
     I get a detailed error.' do
-        find('input[name="commit"]').click
+      find('input[name="commit"]').click
       expect(page).to have_content('Invalid Email or password.')
     end
 

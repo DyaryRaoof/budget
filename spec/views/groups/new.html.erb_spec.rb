@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups new page', type: :system do
-
   describe 'new' do
     before(:each) do
       visit new_user_session_path
@@ -17,6 +16,5 @@ RSpec.describe 'Groups new page', type: :system do
       find('input[name="commit"]').click
       expect(page).to have_current_path(groups_path)
     end
-
   end
 end
