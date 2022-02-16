@@ -22,6 +22,12 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
 
+    unless has_asset?(@group.icon)
+      flash[:notice] = "You should select an existing icon eg. icon1.png, icon2.png, icon3.png"
+      redirect_to request.referrer
+      return
+    end
+
     respond_to do |format|
       if @group.save
         format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
@@ -66,5 +72,9 @@ class GroupsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def group_params
     params.require(:group).permit(:name, :icon, :author_id)
+  end
+
+  def has_asset?(path)
+    Rails.application.assets.find_asset(path) != nil
   end
 end
