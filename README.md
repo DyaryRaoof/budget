@@ -17,7 +17,7 @@ I created a Ruby on Rails application that allows the user to:
 - Devise gem
 
 ## Live Demo
-https://recipes-must-dyary-production.herokuapp.com/
+https://budget-dyary.herokuapp.com/
 
 ## Getting Started
 
