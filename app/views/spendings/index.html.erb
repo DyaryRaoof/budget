@@ -1,21 +1,5 @@
- <nav class="main-blue-background d-flex justify-content-between align-items-end text-light login-page-nav p-3">
-      <span>
-        <%= link_to root_path, class: "bg-transparent text-light border-0", :method => :get do%>
-        <span class="material-icons nav-search-icon ">
-        west
-        </span>
-      <%end%>
-      </span>
+<%= render 'shared/nav_with_back_button', name: "TRANSACTIONS", path: groups_path  %>
 
-      <span>
-      <h2>TRANSACTIONS</h2>
-      </span>
-
-      <span class="material-icons navbar-brand nav-search-icon">
-        search
-      </span>
-     
-    </nav>
 
 <div id="spendings">
   <div class="groups-wrapper">

@@ -24,8 +24,17 @@ class SpendingsController < ApplicationController
   # POST /spendings or /spendings.json
   def create
     @spending = Spending.new(spending_params)
+    
+    if !params[:spending][:group_ids]
+      flash[:notice]  =  'You should select at least one category'
+      redirect_to request.referrer
+      return 
+    end
+
     respond_to do |format|
       if @spending.save
+        
+
         params[:spending][:group_ids].each do |group_id|
           GroupSpending.create(group_id: group_id, spending_id: @spending.id)
         end

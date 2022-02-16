@@ -1,4 +1,4 @@
-<%= form_with(model: spending, url:group_spendings_url(params[:group_id]))  do |form| %>
+<%= form_with(model: spending, url:group_spendings_url(params[:group_id]), data: {turbo: false})  do |form| %>
   <% if spending.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(spending.errors.count, "error") %> prohibited this spending from being saved:</h2>
@@ -11,26 +11,27 @@
     </div>
   <% end %>
 
-  <% Group.where(author_id: current_user.id).each_with_index do |g , i| %>
-        <%= form.check_box :group_ids, {multiple: true}, i, nil %><%= g.name%>
-  <% end %>
+ <div class="d-flex flex-wrap justify-content-center align-items-center p-2">
+    <% Group.where(author_id: current_user.id).each_with_index do |g , i| %>
+           <span class="px-1">
+              <%= form.check_box :group_ids, {multiple: true}, i, nil %><%= g.name%>
+           </span>
+    <% end %>
+ </div>
 
   <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
+    <%= form.hidden_field :author_id, value: current_user.id %>
   </div>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control p-3", placeholder: "Name"  %>
   </div>
 
   <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, class: "form-control p-3", placeholder: "Amount"  %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Save', class: "new-group-button bg-success text-white text-decoration-none form-control p-4 text-center"  %>
   </div>
 <% end %>
