@@ -75,6 +75,6 @@ class GroupsController < ApplicationController
   end
 
   def asset?(path)
-    Rails.application.assets.find_asset(path) != nil
+    CompassRails.sprockets.find_asset(path) != nil
   end
 end

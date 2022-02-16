@@ -46,7 +46,7 @@ gem 'devise'
 
 gem 'cancancan'
 
-gem 'httparty'
+gem 'compass-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
