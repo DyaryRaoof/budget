@@ -12,7 +12,7 @@ I created a Ruby on Rails application that allows the user to:
 - Ruby on Rails
 - PostgreSQL as a databaase
 - Rspec for testing
-- bullet gem to prevent N+1 problems and eager loading
+- bullet gem to prevent N+1 problems and eager loading problems
 - cancancan gem for authorization rules
 - Devise gem for authenticationb
 
