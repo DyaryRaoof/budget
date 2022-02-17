@@ -10,11 +10,11 @@ I created a Ruby on Rails application that allows the user to:
 ## Built With
 
 - Ruby on Rails
-- PostgreSQL
-- Rspec
-- bullet gem
-- cancancan gem
-- Devise gem
+- PostgreSQL as a databaase
+- Rspec for testing
+- bullet gem to prevent N+1 problems and eager loading
+- cancancan gem for authorization rules
+- Devise gem for authenticationb
 
 ## Live Demo
 https://budget-dyary.herokuapp.com/
@@ -53,6 +53,6 @@ Feel free to check the [issues page](https://github.com/DyaryRaoof/budget/issues
 Give a ⭐️ if you like this project!
 
 ## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
+- Original desgin idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) with this [desgin](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- This project is [MIT](./MIT.md) licensed.
 <!-- The email for this project is dyary2018@gmail.com -->
