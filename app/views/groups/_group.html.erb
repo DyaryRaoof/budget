@@ -1,0 +1,13 @@
+<div id="<%= dom_id group %>">
+<%= link_to group_spendings_path(group.id), class:"text-decoration-none text-dark shadow" do %>
+ <div class="d-flex justify-content-between align-items-center bg-light m-3 p-2 single-group-card">
+
+      <%= image_tag group.icon, :size => '100x100', id: "group_icon" %>
+      <%= group.name %>
+      <span class="fw-bold">
+        $ <%=group.group_spendings.reduce(0) { |sum, group_spending| sum + (group_spending.spending.amount) }%>
+      </span>
+ </div>
+<% end %>
+ 
+</div>
